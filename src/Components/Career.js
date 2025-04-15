@@ -3,6 +3,16 @@ import React from 'react';
 
 const experiences = [
   {
+    title: "Lead Developer",
+    company: "Kirkview Farms",
+    tasks: [
+      "Extended farm-wide Wi-Fi coverage from the main house to the sugar shack (1.5 km away) and built a mobile solar power station for off-grid energy needs, demonstrating strong troubleshooting and system integration skills.",
+      "Developed an IoT-based monitoring system with temperature and humidity sensors, logging data to farmer’s app every 2 hours.",
+      "Designed and implemented a cross-platform mobile dashboard integrating real-time IoT sensor data and security camera feeds, significantly enhancing operational efficiency and security measures across the farm."
+    ],
+    timeframe: "January 2025 - May 2025"
+  },
+  {
     title: "Fullstack Developer Intern",
     company: "KaarDeep Engineering",
     tasks: [
@@ -39,8 +49,10 @@ const education = [
     title: "Applied Computer Science",
     company: "Concordia University",
     tasks: [
-      "3.8/4.0 GPA",
-      "$1500 semesterly awarded scholarship",
+      "3.1/4.0 GPA",
+      "$1500 yearly award scholarship",
+      "$2000 Internship Bursary from Kirkview Farms",
+      "Concordia University Graduate Student Association Director",
     ],
     timeframe: "September 2023 - May 2025",
   },
@@ -50,6 +62,7 @@ const education = [
     tasks: [
       "3.8/4.3 GPA",
       "2x Best Outgoing Student (2022), (2023)",
+      "Crescent Data Science Club Vice-President",
     ],
     timeframe: "September 2019 - May 2023",
   }

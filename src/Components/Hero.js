@@ -1,22 +1,38 @@
-import React, { useState } from 'react'; // Add useState for hover effect
+import React, { useState } from 'react';
 
 function Hero() {
-  const [isHovered, setIsHovered] = useState(false); // State to track hover
+  const [isHoveredResume, setIsHoveredResume] = useState(false);
+  const [isHoveredBlog, setIsHoveredBlog] = useState(false);
+  const [isHoveredImages, setIsHoveredImages] = useState(false);
+
+  const getButtonStyle = (isHovered) => ({
+    backgroundColor: isHovered ? "#F9C74F" : "transparent",
+    color: isHovered ? "#2B2D42" : "#F9C74F",
+    padding: "1.25rem 2.5rem",
+    border: isHovered ? "2px solid transparent" : "2px solid #F9C74F",
+    borderRadius: "9999px",
+    fontSize: "1.25rem",
+    transition: "background-color 0.3s, color 0.3s, border-color 0.3s",
+    textDecoration: "none",
+    cursor: "pointer",
+    display: "inline-block",
+    marginRight: "1rem" // space between buttons
+  });
 
   const styles = {
     section: {
       display: "flex",
       flexDirection: "column",
-      justifyContent: "flex-start", // Keep content aligned to the top
-      alignItems: "flex-start", // Keep content left-aligned
-      marginTop: "18vh", // Adds margin to top
-      height: "80vh", // Height of the section
-      padding: "0 1rem", // Adjusted padding for more centered alignment
-      marginLeft: "auto", // Pushes content a bit towards the center
-      marginRight: "auto", // Ensures it doesn't go too far right
+      justifyContent: "flex-start",
+      alignItems: "flex-start",
+      marginTop: "18vh",
+      height: "80vh",
+      padding: "0 1rem",
+      marginLeft: "auto",
+      marginRight: "auto",
     },
     heading1: {
-      color: "#F9C74F", // Primary color
+      color: "#F9C74F",
       marginBottom: "2.5rem",
       fontSize: "clamp(13px, 5vw, 17px)",
     },
@@ -26,30 +42,23 @@ function Hero() {
     },
     heading3: {
       fontSize: "clamp(30px, 7vw, 52px)",
-      color: "#6B7280", // Secondary text color
+      color: "#6B7280",
       marginBottom: "2.5rem",
     },
     paragraph: {
-      color: "#6B7280", // Secondary text color
+      color: "#6B7280",
       maxWidth: "540px",
       fontSize: "clamp(13px, 5vw, 17px)",
       marginBottom: "3.5rem",
-      lineHeight: "1.5", // Increases line spacing for better readability
+      lineHeight: "1.5",
     },
-    button: {
-      backgroundColor: isHovered ? "#F9C74F" : "transparent", // Change to yellow when hovered
-      color: isHovered ? "#2B2D42" : "#F9C74F", // Text color changes when hovered
-      padding: "1.25rem 2.5rem",
-      border: isHovered ? "2px solid transparent" : "2px solid #F9C74F", // Transparent border on hover
-      borderRadius: "9999px", // Rounded button
-      fontSize: "1.875rem",
-      transition: "background-color 0.3s, color 0.3s, border-color 0.3s",
-      textDecoration: "none",
-      cursor: "pointer",
-    },
+    buttonContainer: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      gap: "1rem", // optional spacing between buttons
+    }
   };
-  
-  
 
   return (
     <section style={styles.section}>
@@ -63,16 +72,41 @@ function Hero() {
         creating innovative solutions and exploring new technologies. This
         portfolio showcases my projects and technical skills.
       </p>
-      <a
-        href="https://drive.google.com/file/d/1-XYvWDjNs9bUkIVMJovqGSSg0UDAVWvu/view?usp=sharing"
-        style={styles.button}
-        onMouseOver={() => setIsHovered(true)} // Set hover state to true
-        onMouseOut={() => setIsHovered(false)} // Set hover state to false
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Check out my Resume!
-      </a>
+
+      <div style={styles.buttonContainer}>
+        <a
+          href="https://drive.google.com/file/d/1-XYvWDjNs9bUkIVMJovqGSSg0UDAVWvu/view?usp=sharing"
+          style={getButtonStyle(isHoveredResume)}
+          onMouseOver={() => setIsHoveredResume(true)}
+          onMouseOut={() => setIsHoveredResume(false)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Check out my Resume!
+        </a>
+
+        <a
+          href="https://sujith-kumar-2003.github.io/bL0g/"
+          style={getButtonStyle(isHoveredBlog)}
+          onMouseOver={() => setIsHoveredBlog(true)}
+          onMouseOut={() => setIsHoveredBlog(false)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          My new Blog is out now!
+        </a>
+
+        <a
+          href="https://octopus-wall.onrender.com/"
+          style={getButtonStyle(isHoveredImages)}
+          onMouseOver={() => setIsHoveredImages(true)}
+          onMouseOut={() => setIsHoveredImages(false)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Check out my Images!
+        </a>
+      </div>
     </section>
   );
 }
