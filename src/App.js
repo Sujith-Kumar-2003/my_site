@@ -48,7 +48,7 @@ useEffect(() => {
   return () => {
     document.head.removeChild(styleElement);
   };
-}, [scrollbarStyles]);  // Add scrollbarStyles to the dependency array
+}, [scrollbarStyles]);  
 
 
   return (

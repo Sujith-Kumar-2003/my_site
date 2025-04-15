@@ -26,7 +26,7 @@ const projects = [
       "A real-time wildfire prediction and analysis dashboard built for ConUHacks IX (SAP Challenge). The project helps monitor and predict wildfire incidents in Quebec using environmental data and machine learning. " +
       "Features include smart CSV uploads, real-time fire incident analysis, interactive map visualizations with Google Maps API, and ML-based risk prediction using a Random Forest classifier. " +
       "The frontend was built with React (Vite + Tailwind + Framer Motion), and the backend with Flask, deployed on Vercel and Render respectively.",
-    img: wildWatcherPic, // replace with the actual image variable if available
+    img: wildWatcherPic, 
     tools: ["React", "Vite", "Tailwind", "Flask", "Python", "Pandas", "Scikit-learn", "Google Maps API"],
     githubLink: "https://github.com/Sujith-Kumar-2003/The-Wild-Watcher",
     websiteLink: "https://wild-watch.vercel.app",
